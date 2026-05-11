@@ -13,6 +13,15 @@ Inverse Kinematics: To calculate the necessary joint angles to move the robot's 
 - `tests/` — unit tests to verify FK and IK correctness
 - `notebooks/` — results, plots, analysis
 
+## Neural IK
+It takes data from Ik_analytic and trains it with 3 hidden layers using MSE loss and adam optimizer. Tried it with forward kinematics but end effector position can give multiple different solution, the best results got form IK_analytic. Through model , i got 0.0002 loos and it matched analytic IK solution closely.
+
+
+## Limitations
+- 2 hidden layers were insufficient — 3 hidden layers with 128 neurons achieved loss of 0.0002
+- FK-generated dataset failed due to multiple IK solutions for same end effector position
+- Neural IK assumes theta3 is handled via phi — true 6-DOF IK would need a different approach
+
 ## What I will learn
 - Denavit-Hartenberg parameters
 - Rotation matrices and transform chaining
