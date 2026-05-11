@@ -49,6 +49,12 @@ import os
 os.makedirs('models',exist_ok=True)
 torch.save(model.state_dict(),'models/ik_neural.pth')
 print("Model saved to models/ik_neural.pth")
+# Save normalization stats
+np.save('models/input_mean.npy', input_mean.numpy())
+np.save('models/input_std.npy', input_std.numpy())
+np.save('models/label_mean.npy', label_mean.numpy())
+np.save('models/label_std.npy', label_std.numpy())
+print("Normalization stats saved")
 
 
 
