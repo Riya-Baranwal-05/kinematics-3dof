@@ -33,3 +33,9 @@ It takes data from Ik_analytic and trains it with 3 hidden layers using MSE loss
 
 ## References
 - Modern Robotics — Lynch & Park: https://modernrobotics.org
+
+
+## Running Tests
+```bash
+python3 -m pytest tests/ -v
+```
