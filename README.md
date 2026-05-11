@@ -16,6 +16,10 @@ Inverse Kinematics: To calculate the necessary joint angles to move the robot's 
 ## Neural IK
 It takes data from Ik_analytic and trains it with 3 hidden layers using MSE loss and adam optimizer. Tried it with forward kinematics but end effector position can give multiple different solution, the best results got form IK_analytic. Through model , i got 0.0002 loos and it matched analytic IK solution closely.
 
+## Results
+![IK Comparison](viz/comparison.png)
+- Analytic IK mean error: 0.76
+- Neural IK mean error: 0.88
 
 ## Limitations
 - 2 hidden layers were insufficient — 3 hidden layers with 128 neurons achieved loss of 0.0002
