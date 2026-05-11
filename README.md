@@ -1,5 +1,7 @@
 # Kinematics 3-DOF Arm
 
+![Demo](viz/demo.gif)
+
 ## What does this project do?
 This project builds a Forward and Inverse Kinematics solver for a 
 3-joint planar robot arm. 
