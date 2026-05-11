@@ -43,12 +43,25 @@ predicted_angles_normalized = model(test_input_normalized)
 predicted_angles = predicted_angles_normalized * label_std + label_mean
 print('Neural IK Predicted:', predicted_angles.detach().numpy())
 
+
+#save the model
+import os
+os.makedirs('models',exist_ok=True)
+torch.save(model.state_dict(),'models/ik_neural.pth')
+print("Model saved to models/ik_neural.pth")
+
+
+
+
 #compare with analytic IK
 import sys
 sys.path.insert(0,'/Users/riyabaranwal/kinematics-3dof')
 from kinematics.ik_analytic import inverse_kinematics
 t1,t2,t3=inverse_kinematics(1.0,0.5,1,1,1,1.5)
 print('Analytic IK:    ',[t1,t2,t3])
+
+
+
 
 from kinematics.fk import forward_kinematics
 import numpy as np
